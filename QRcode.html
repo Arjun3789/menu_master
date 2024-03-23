@@ -1,0 +1,188 @@
+<!doctype html>
+<head>
+  <link rel="stylesheet" type="text/css" href="main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<style>
+      .menu-bar{
+    background: rgb(69, 69, 146);
+    text-align: center;
+}
+*{
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif ;
+    box-sizing: border-box;
+}
+body{
+   
+    background-size: cover;
+} 
+.menu-bar{
+    background: rgb(69, 69, 140);
+    text-align: center;
+
+}
+.menu-bar ul{
+    display: inline-flex;
+    list-style: none;
+    color: #fff;
+}
+.menu-bar ul li{
+    width: 150px;
+    margin: 15px;
+    padding: 15px;
+}
+.menu-bar ul li a{
+    color: white;
+    text-decoration: none;
+}
+.active, .menu-bar ul li:hover{
+    background:black;
+    border-radius: 3px;
+}
+.menu-bar .fas{
+    margin-right: 8px;
+}
+.sub-menu1{
+    display: none;
+}
+.menu-bar ul li:hover .sub-menu1{
+    display: block;
+    position: absolute;
+    background:rgb(69, 69, 131);
+    margin-top: 15px;
+    margin-left: -15px;
+}
+.menu-bar ul li:hover .sub-menu1 ul{
+    display: block;
+    margin: 10px;
+}
+.menu-bar ul li:hover .sub-menu1 ul li{
+    width: 100px;
+    padding: 10px;
+    background: transparent;
+    border-bottom: 1px dotted white;
+    border-radius: 0;
+    text-align: left;
+}
+.menu-bar ul li:hover .sub-menu1 ul li a:hover{
+    color:black;
+}
+
+			/* CSS comes here */
+		body 
+    {
+     
+      
+		/*	padding:40px;*/
+      align-items: center;
+      text-align: center;
+
+      
+		}
+		input 
+    {
+			padding:5px;
+			background-color:transparent;
+			border:none;
+			border-bottom:solid 4px #8c52ff;
+			width:250px;
+			font-size:16px;
+		}
+			
+		.qr-btn 
+    {
+			background-color:#8c52ff;
+     
+			padding:8px;
+			color:white;
+			cursor:pointer;
+		}
+    .qr{
+      text-align:center;
+      
+    }
+  
+	</style>
+		
+	
+</head>
+<body>
+  <div class="menu-bar">
+    <ul>
+       <li ><a href="main.html"><i class="fa fa-home"></i> Home</a></li>
+           <li><a href="#"><i class="fa fa-registered"></i> Registation</a>
+               <div class="sub-menu1">
+                   <ul>
+                       <li><a href="./register.html">Admin</a></li>
+                       <li><a href="/Mess_management/User/user_register.html">User</a></li>
+                   </ul>
+               </div>
+           </li>
+            <li><a href="./QRcode.html"><i class="fa fa-qrcode"></i> QR Code</a></li>
+            <li><a href="./records.php" class="fa fa-users"></i> Account</a></li>
+            <li><a href="payment.php"><i class="fa fa-rupee"></i> Payment</a></li>
+            <li><a href="./login.html"><i class="fa fa-sign-out"></i> Logout</a></li>
+   </ul>
+</div>
+
+	<h2 style="margin-left: 21%;"  >  </h2>
+  <br>
+
+	<div><input id="qr-text" type="name" placeholder="Enter name" required></div>
+  <br>
+    
+
+    <div><input id="qr-text2" type="date" placeholder="Enter date" required></div>
+    <br/>
+  
+    <div>
+      <button class="qr-btn" id="qr-btn" onclick="generateQRCode()">Create QR Code</button>
+      
+    </div>
+  
+    <br/>
+    <p id="qr-result"></p>
+    <canvas id="qr-code"></canvas>
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+		<script>	/* JS comes here */
+		var qr;
+    
+    function generateQRCode() 
+    {
+      (function() 
+      {
+        qr = new QRious(
+        {
+          element: document.getElementById('qr-code'),
+          size: 200,
+          // value: 'https://studytonight.com'
+        });
+      })();
+              
+      var qrtext = document.getElementById("qr-text").value;
+	  
+      var qrtext2 = document.getElementById("qr-text2").value;
+      document.getElementById("qr-result").innerHTML   ;
+                
+      qr.set(
+      {
+        foreground: 'black',
+        size: 200,
+      //  value: qrtext + "\n" + qrtext1 +"\n"+ qrtext2
+      value:JSON.stringify({
+        name:qrtext,
+        
+        date:qrtext2
+      })
+      });
+    }
+		</script>
+  
+
+  
+        
+	</body>
+</html>

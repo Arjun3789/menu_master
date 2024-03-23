@@ -1,0 +1,91 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+}
+body{
+    width: 100%;
+	height: 100%;
+	background: rgb(187, 187, 245);
+	color: #fff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.card{     
+	width: 350px;
+	height: 500px;
+	box-shadow: 0 0 40px 20px rgba(0, 10, 07, 0.26);
+	perspective: 1000px ;
+	border-radius: 10%;
+}
+.front{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-position: center;
+	background-size: cover;
+	background-image: linear-gradient(rgba(0,0,100,0.8),rgba(0,0,100,0.8)),url(bg.jpg);
+	padding: 55px;
+	box-sizing: border-box;
+	border-radius: 10%;
+	
+}
+.card h1{
+	font-weight: normal;
+	font-size: 24px;
+	text-align: center;
+	margin-bottom: 20px;
+	margin-top: 20px;
+}
+.input-box{
+	width: 100%;
+	background: transparent;
+	border: 1px solid #fff;
+	margin: 12px 0;
+	height: 32px;
+	border-radius: 20px;
+	padding: 0 10px;
+	box-sizing: border-box;
+	outline: none;
+	text-align: center;
+	color: #fff;
+}
+button{
+	width: 100%;
+	background: transparent;
+	border: 1px solid #fff;
+	margin: 35px 0 10px;
+	height: 30px;
+	font-size: 14px;
+	border-radius: 20px;
+	padding: 0 10px;
+	box-sizing: border-box;
+	outline: noun;
+	color: #fff;
+	cursor: pointer;
+}
+.card a{
+	color: #fff;
+	display: block;
+	text-align: center;
+	font-size: 13px;
+	margin-top: 8px;
+}
+.reg-btn{
+	position: relative;
+
+}
+.reg-btn::after{
+	content: '\27a4';
+	color: #333;
+	line-height: 32px;
+	font-size: 17px;
+	height: 32px;
+	width: 32px;
+	border-radius: 50%;
+	background: #fff;
+	position: absolute;
+	right: -1px;
+	top: -1px;
+}
